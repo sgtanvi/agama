@@ -4,6 +4,7 @@ import { db } from "@/lib/db";
 import { events, attendees } from "@/lib/db/schema";
 import { eq, and } from "drizzle-orm";
 import Link from "next/link";
+import QRCodeGenerator from "./QRCodeGenerator";
 import DeleteEventButton from "./DeleteEventButton";
 
 export default async function EventDetailPage({
@@ -124,7 +125,25 @@ export default async function EventDetailPage({
             >
               View Gallery
             </Link>
+            <button
+              onClick={() => {
+                const qrSection = document.getElementById('qr-code-section');
+                qrSection?.scrollIntoView({ behavior: 'smooth' });
+              }}
+              className="px-4 py-2 bg-purple-600 text-white rounded-lg hover:bg-purple-700 transition"
+            >
+              📱 Generate QR Code
+            </button>
           </div>
+        </div>
+
+        {/* QR Code Generator */}
+        <div id="qr-code-section" className="mb-6">
+          <QRCodeGenerator
+            eventId={event.id}
+            eventTitle={event.title}
+            eventUrl={`${process.env.NEXT_PUBLIC_APP_URL}/event/${event.id}`}
+          />
         </div>
 
         {/* Attendees List */}
