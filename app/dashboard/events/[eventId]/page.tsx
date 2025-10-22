@@ -126,17 +126,12 @@ export default async function EventDetailPage({
             >
               View Gallery
             </Link>
-            <QRCodeButton eventId={event.id} />
+            <QRCodeButton 
+              eventId={event.id} 
+              eventTitle={event.title}
+              eventUrl={`${process.env.NEXT_PUBLIC_APP_URL}/event/${event.id}`}
+            />
           </div>
-        </div>
-
-        {/* QR Code Generator */}
-        <div id="qr-code-section" className="mb-6">
-          <QRCodeGenerator
-            eventId={event.id}
-            eventTitle={event.title}
-            eventUrl={`${process.env.NEXT_PUBLIC_APP_URL}/event/${event.id}`}
-          />
         </div>
 
         {/* Attendees List */}
