@@ -1,5 +1,5 @@
 # Internal Context
-This document is the authoritative product description for the Orbit platform.
+This document is the authoritative product description for the Agama platform.
 All code should preserve the described user flows, tone, and privacy guarantees.
 
 
@@ -9,9 +9,9 @@ It’s written so coding agents (or collaborators) can build the MVP exactly as 
 ---
 
 ````markdown
-# Orbit — MVP Build Specification (Organizer Request Version)
+# Agama — MVP Build Specification (Organizer Request Version)
 
-This document defines the first production-ready MVP of Orbit, based on organizer feedback.  
+This document defines the first production-ready MVP of Agama, based on organizer feedback.  
 The goal is to create a working, minimal version that organizers can use immediately for real events.
 
 ---
@@ -275,7 +275,7 @@ After MVP launch:
 
 ---
 
-*This document defines the current MVP scope for Orbit.
+*This document defines the current MVP scope for Agama.
 Future versions may add analytics, role systems, or sponsorship modules, but those are out of scope for now.*
 
 ```

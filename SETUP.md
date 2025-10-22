@@ -1,4 +1,4 @@
-# Orbit Setup Guide - 9 Days to Launch
+# Agama Setup Guide - 9 Days to Launch
 
 **Target Launch:** October 23rd
 
@@ -30,11 +30,11 @@
 ### 2. Neon Postgres (Database) - 5 minutes
 
 1. Go to https://neon.tech and sign up
-2. Create a new project called "orbit"
+2. Create a new project called "agama"
 3. Copy the connection string
 4. Add to `.env.local`:
    ```bash
-   DATABASE_URL=postgresql://user:password@host.neon.tech/orbit?sslmode=require
+   DATABASE_URL=postgresql://user:password@host.neon.tech/agama?sslmode=require
    ```
 5. Run migrations:
    ```bash
@@ -46,7 +46,7 @@
 
 1. Go to https://dash.cloudflare.com
 2. Navigate to R2 Object Storage
-3. Create a bucket called "orbit-uploads"
+3. Create a bucket called "agama-uploads"
 4. Go to "Manage R2 API Tokens"
 5. Create an API token with "Object Read & Write" permissions
 6. Add to `.env.local`:
@@ -54,8 +54,8 @@
    R2_ACCOUNT_ID=your-account-id
    R2_ACCESS_KEY_ID=your-access-key
    R2_SECRET_ACCESS_KEY=your-secret-key
-   R2_BUCKET_NAME=orbit-uploads
-   R2_PUBLIC_URL=https://orbit-uploads.your-account.r2.dev
+   R2_BUCKET_NAME=agama-uploads
+   R2_PUBLIC_URL=https://agama-uploads.your-account.r2.dev
    ```
 7. Enable public access for the bucket (Settings → Public Access → Allow)
 

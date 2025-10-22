@@ -182,7 +182,7 @@
 ## Current File Structure
 
 ```
-orbit/
+agama/
 ├── app/
 │   ├── page.tsx                    # Landing page
 │   ├── layout.tsx                  # Root layout with Clerk

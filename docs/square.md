@@ -7,14 +7,14 @@ Here’s a drop-in `.md` you can add to your repo (e.g., `docs/SQUARE_CONNECT.md
 ```markdown
 # Square Connect (OAuth) — Organizer Payments Integration
 
-Goal: let **organizers** connect their own Square account to Orbit.  
+Goal: let **organizers** connect their own Square account to Agama.  
 After connection, the organizer can accept attendee payments via Square Checkout/Payment Links, and we can verify payments via webhooks.
 
 ---
 
 ## Overview
 
-- **Auth model**: Organizers authenticate in Orbit (your app). Then they **connect** their Square merchant via OAuth.
+- **Auth model**: Organizers authenticate in Agama (your app). Then they **connect** their Square merchant via OAuth.
 - **What we store**: Square `merchant_id`, an **access token** (encrypted), optional `refresh_token`, and default `location_id`.
 - **What we do**: Create Orders/Payment Links/Checkout sessions using the organizer’s Square credentials. Confirm payment via Square webhooks.
 
@@ -215,7 +215,7 @@ POST /api/integrations/square/webhook
 
 ## Organizer Login vs Square Connect
 
-* Organizers sign into Orbit normally (your auth).
+* Organizers sign into Agama normally (your auth).
 * **Square Connect** is an additional step to link their merchant account.
 * You never handle their Square username/password; OAuth only.
 

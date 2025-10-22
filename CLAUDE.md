@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-**Orbit** is an event management platform that enables organizers to run events with real-time engagement tracking, photo uploads, and attendee communication. The platform serves four user types: Attendees, Organizers, Sponsors, and Team Members (logistics/photographers/volunteers).
+**Agama** is an event management platform that enables organizers to run events with real-time engagement tracking, photo uploads, and attendee communication. The platform serves four user types: Attendees, Organizers, Sponsors, and Team Members (logistics/photographers/volunteers).
 
 ### Core Value Propositions
 - **For Attendees**: Discover events, RSVP, upload photos anonymously, participate in polls/surveys

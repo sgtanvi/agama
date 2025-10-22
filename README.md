@@ -1,4 +1,4 @@
-# Orbit - Event Management Platform
+# Agama - Event Management Platform
 
 Event management platform with real-time engagement tracking, photo uploads, and attendee communication.
 
@@ -46,7 +46,7 @@ Open [http://localhost:3000](http://localhost:3000)
 ## Project Structure
 
 ```
-orbit/
+agama/
 ├── app/                    # Next.js App Router pages
 │   ├── dashboard/         # Organizer dashboard (protected)
 │   ├── sign-in/           # Clerk auth pages

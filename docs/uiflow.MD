@@ -1,5 +1,5 @@
 # Internal Context
-This document is the authoritative product description for the Orbit platform.
+This document is the authoritative product description for the Agama platform.
 All code should preserve the described user flows, tone, and privacy guarantees.
 
 
@@ -73,7 +73,7 @@ Sponsor Add-On: branded reports and dedicated dashboard modules.
 
 User Journeys
 Attendee Journey
-Discovers an event in the Orbit app.
+Discovers an event in the Agama app.
 Views event details, RSVPs, and adds to calendar.
 Receives broadcast reminders and live updates during the event.
 Uploads photos (if allowed) and participates in quick polls.
