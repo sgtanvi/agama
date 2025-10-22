@@ -1,37 +1,104 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Orbit - Event Management Platform
 
-## Getting Started
+Event management platform with real-time engagement tracking, photo uploads, and attendee communication.
 
-First, run the development server:
+## Quick Start
+
+### 1. Install Dependencies
 
 ```bash
 npm install
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### 2. Set Up Environment Variables
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Copy `.env.local.example` to `.env.local` and fill in your credentials:
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+cp .env.local.example .env.local
+```
 
-## Learn More
+You'll need:
+- **Clerk** account (free tier) - Get keys from https://clerk.com
+- **Neon** Postgres database - Create at https://neon.tech
+- **Cloudflare R2** bucket - Set up at https://dash.cloudflare.com
+- **Square** developer account - Get sandbox keys from https://developer.squareup.com
+- **Courier** account - Sign up at https://courier.com
 
-To learn more about Next.js, take a look at the following resources:
+### 3. Set Up Database
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```bash
+# Generate migration files
+npm run db:generate
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+# Run migrations (make sure DATABASE_URL is set)
+npm run db:migrate
+```
 
-## Deploy on Vercel
+### 4. Run Development Server
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+```bash
+npm run dev
+```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Open [http://localhost:3000](http://localhost:3000)
+
+## Project Structure
+
+```
+orbit/
+├── app/                    # Next.js App Router pages
+│   ├── dashboard/         # Organizer dashboard (protected)
+│   ├── sign-in/           # Clerk auth pages
+│   ├── sign-up/
+│   └── api/               # API routes
+├── lib/                   # Utilities and integrations
+│   ├── db/               # Drizzle ORM setup
+│   ├── square.ts         # Square payments
+│   ├── r2.ts             # Cloudflare R2 storage
+│   └── courier.ts        # SMS messaging
+└── drizzle/              # Database migrations (auto-generated)
+```
+
+## Development Timeline (9 Days to Oct 23)
+
+- **Day 1-2**: Event creation + Square payment flow
+- **Day 3-4**: Photo upload with R2
+- **Day 5**: SMS broadcast system
+- **Day 6-7**: Organizer dashboard polish
+- **Day 8-9**: Bug fixes and deployment
+
+## Tech Stack
+
+- **Frontend**: Next.js 15 + React 19 + Tailwind CSS
+- **Auth**: Clerk
+- **Database**: Neon Postgres + Drizzle ORM
+- **Storage**: Cloudflare R2
+- **Payments**: Square
+- **SMS**: Courier
+- **Deployment**: Vercel
+
+## Deployment
+
+```bash
+# Push to GitHub
+git add .
+git commit -m "Initial commit"
+git push
+
+# Deploy to Vercel
+vercel --prod
+```
+
+Add environment variables in Vercel dashboard before deploying.
+
+## Database Schema
+
+- `events` - Event details (title, date, price, organizer)
+- `attendees` - RSVP records with payment status
+- `media_assets` - Anonymous photo uploads
+- `broadcasts` - SMS message history
+
+## License
+
+MIT
