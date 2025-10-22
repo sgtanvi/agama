@@ -118,7 +118,7 @@ export async function POST(request: NextRequest) {
           to: attendee.email,
           name: attendee.name,
           eventTitle: event.title,
-          eventDate: event.date,
+          eventDate: event.date.toISOString(),
           eventLocation: event.location,
           ticketType: ticketName,
           price: ticketPrice,
