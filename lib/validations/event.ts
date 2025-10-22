@@ -10,9 +10,11 @@ export const createEventSchema = z.object({
     .max(1000, "Description must be less than 1000 characters")
     .optional(),
   date: z.string().refine((val) => {
-    const date = new Date(val);
-    return date > new Date();
-  }, "Event date must be in the future"),
+    const eventDate = new Date(val);
+    const now = new Date();
+    // Allow events happening now or in the future (with 1 minute buffer for processing)
+    return eventDate >= new Date(now.getTime() - 60000);
+  }, "Event date cannot be in the past"),
   location: z
     .string()
     .min(1, "Location is required")
