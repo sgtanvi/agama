@@ -4,7 +4,6 @@ import { db } from "@/lib/db";
 import { events, attendees } from "@/lib/db/schema";
 import { eq, and } from "drizzle-orm";
 import Link from "next/link";
-import QRCodeGenerator from "./QRCodeGenerator";
 import QRCodeButton from "./QRCodeButton";
 import DeleteEventButton from "./DeleteEventButton";
 
@@ -126,10 +125,10 @@ export default async function EventDetailPage({
             >
               View Gallery
             </Link>
-            <QRCodeButton 
-              eventId={event.id} 
+            <QRCodeButton
+              eventId={event.id}
               eventTitle={event.title}
-              eventUrl={`${process.env.NEXT_PUBLIC_APP_URL}/event/${event.id}`}
+              eventUrl={`${process.env.NEXT_PUBLIC_APP_URL || ''}/event/${event.id}`}
             />
           </div>
         </div>

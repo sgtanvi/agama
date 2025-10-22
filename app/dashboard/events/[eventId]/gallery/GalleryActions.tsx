@@ -12,7 +12,8 @@ export default function GalleryActions({
   const [downloading, setDownloading] = useState(false);
   const [copied, setCopied] = useState(false);
 
-  const uploadLink = `${window.location.origin}/event/${eventId}/upload`;
+  const baseUrl = process.env.NEXT_PUBLIC_APP_URL || (typeof window !== 'undefined' ? window.location.origin : '');
+  const uploadLink = `${baseUrl}/event/${eventId}/upload`;
 
   const handleCopyLink = async () => {
     try {
